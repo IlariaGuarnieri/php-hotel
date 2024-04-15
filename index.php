@@ -53,13 +53,26 @@ $hotels = [
   </head>
   <body>
 
-  <div class="container">
+  <div class="container d-flex my-5"
+  
+  
+  
+  
+  
+  
+  
+  
+  >
       <?php foreach ($hotels as $hotel) : ?>
-        <p> <?php echo $hotel['name'] ?> </p>
-        <p> <?php echo $hotel['description']  ?> </p>
-        <p> <?php echo $hotel['parking'] ?> </p>
-        <p> <?php echo $hotel['vote']  ?> </p>
-        <p> <?php echo $hotel['distance_to_center'] ?> </p>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $hotel['name'] ?> </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Descrizione: <?php echo $hotel['description']  ?>  </h6>
+            <p class="card-text"> Parcheggio: <?php echo ($hotel['parking'] ? 'si' : 'no' ) ?> </p>
+            <p class="card-text"> Vote: <?php echo $hotel['vote']  ?> </p>
+            <p class="card-text"> Distanza dal centro: <?php echo $hotel['distance_to_center'] ?> km </p>
+          </div>
+        </div>
         <?php endforeach ?>
         
   </div>
